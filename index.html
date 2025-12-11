@@ -103,9 +103,7 @@
 
 <script>
 
-// ---------------------------------------------------------------------------
-// MAP SETUP
-// ---------------------------------------------------------------------------
+
 var mymap = L.map('map', {
     center: [39.8283, -98.5795],
     zoom: 4,
@@ -117,9 +115,6 @@ L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png')
     .addTo(mymap);
 
 
-// ---------------------------------------------------------------------------
-// 🔥 WILDFIRE POINTS
-// ---------------------------------------------------------------------------
 
 var wildfireColor = chroma('red').brighten(1).hex();
 
@@ -158,9 +153,6 @@ var pointLayer = L.geoJson.ajax("assets/firepoints.geojson", {
 }).addTo(mymap);
 
 
-// ---------------------------------------------------------------------------
-// 🌡 WILDFIRE RISK POLYGONS (CHOROPLETH)
-// ---------------------------------------------------------------------------
 
 // Warm → Cool scale
  var riskColors = {
@@ -194,9 +186,7 @@ var polygonLayer = L.geoJson.ajax("assets/risk.geojson", {
 }).addTo(mymap);
 
 
-// ---------------------------------------------------------------------------
-// LEGEND
-// ---------------------------------------------------------------------------
+
 var legend = L.control({ position: 'topright' });
 
 legend.onAdd = function () {
